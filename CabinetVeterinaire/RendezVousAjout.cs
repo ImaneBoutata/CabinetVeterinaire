@@ -30,16 +30,16 @@ namespace CabinetVeterinaire
 
         private void RendezVousAjout_Load(object sender, EventArgs e)
         {
-            RendezVousdb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", ClientCombo);
-            RendezVousdb.DisplayComboBoxAnimal("SELECT NOM FROM ANIMAL", AnimalCombo);
+            RendezVousdb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", comboBox1);
+            RendezVousdb.DisplayComboBoxAnimal("SELECT NOM FROM ANIMAL", comboBox2);
         }
 
         public void UpdateInfo()
         {
             // textForm.Text = "Modifier un client ";
             Ajouterbtn.Text = "Modifier";
-            ClientCombo.Text = cinClient;
-            AnimalCombo.Text = nomAnimal;
+            comboBox1.Text = cinClient;
+            comboBox2.Text = nomAnimal;
             heureBox.Text = heure;
             localbox.Text = local;
             daterdvpicker.Text = daterdv;
@@ -48,7 +48,7 @@ namespace CabinetVeterinaire
         }
         public void Clear()
         {
-            ClientCombo.Text = AnimalCombo.Text = heureBox.Text = localbox.Text = daterdvpicker.Text = String.Empty;
+            comboBox1.Text = comboBox2.Text = heureBox.Text = localbox.Text = daterdvpicker.Text = String.Empty;
         }
 
         private void Ajouterbtn_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace CabinetVeterinaire
             if (Ajouterbtn.Text == "Ajouter")
             {
 
-                RendezVous c = new RendezVous(ClientCombo.Text.Trim(), AnimalCombo.Text.Trim(), daterdvpicker.Text.Trim(), heureBox.Text.Trim(), localbox.Text.Trim());
+                RendezVous c = new RendezVous(comboBox1.Text.Trim(), comboBox2.Text.Trim(), daterdvpicker.Text.Trim(), heureBox.Text.Trim(), localbox.Text.Trim());
                 RendezVousdb.AddRdv(c);
                 Clear();
 
@@ -64,8 +64,7 @@ namespace CabinetVeterinaire
             if (Ajouterbtn.Text == "Modifier")
             {
 
-                RendezVous c = new RendezVous(ClientCombo.Text.Trim(), AnimalCombo.Text.Trim(), daterdvpicker.Text.Trim(), heureBox.Text.Trim(), localbox.Text.Trim());
-
+                RendezVous c = new RendezVous(comboBox1.Text.Trim(), comboBox2.Text.Trim(), daterdvpicker.Text.Trim(), heureBox.Text.Trim(), localbox.Text.Trim());
                 RendezVousdb.UpdateRdv(c, id);
                 Clear();
 

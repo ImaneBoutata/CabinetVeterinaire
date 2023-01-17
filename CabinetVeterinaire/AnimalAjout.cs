@@ -32,11 +32,17 @@ namespace CabinetVeterinaire
 
         }
 
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         public void UpdateInfo()
         {
             // textForm.Text = "Modifier un client ";
             ajouterbtn.Text = "Modifier";
-            ClientCombo.Text = cinClient;
+           // ClientCombo.Text = cinClient;
+            comboBox1.Text = cinClient;
             animalnomBox.Text = nom;
             categorieBox.Text = categorie;
             ageBox.Text = age.ToString();
@@ -48,12 +54,12 @@ namespace CabinetVeterinaire
         }
         public void Clear()
         {
-            ClientCombo.Text = animalnomBox.Text = categorieBox.Text = ageBox.Text = poidsBox.Text = sexeBox.Text = raceBox.Text = String.Empty;
+            comboBox1.Text = animalnomBox.Text = categorieBox.Text = ageBox.Text = poidsBox.Text = sexeBox.Text = raceBox.Text = String.Empty;
         }
 
         private void AnimalAjout_Load(object sender, EventArgs e)
         {
-            Animaldb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", ClientCombo);
+            Animaldb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", comboBox1);
         }
 
         
@@ -62,7 +68,7 @@ namespace CabinetVeterinaire
             if (ajouterbtn.Text == "Ajouter")
             {
 
-                Animal a = new Animal(ClientCombo.Text, animalnomBox.Text.Trim(), categorieBox.Text.Trim(), Convert.ToInt16(ageBox.Text.Trim()), Convert.ToDouble(poidsBox.Text.Trim()), sexeBox.Text.Trim(), raceBox.Text.Trim());
+                Animal a = new Animal(comboBox1.Text, animalnomBox.Text.Trim(), categorieBox.Text.Trim(), Convert.ToInt16(ageBox.Text.Trim()), Convert.ToDouble(poidsBox.Text.Trim()), sexeBox.Text.Trim(), raceBox.Text.Trim());
                 //textForm.Text = "Ajouter un client ";
                 ajouterbtn.Text = "Ajouter";
                
@@ -81,7 +87,7 @@ namespace CabinetVeterinaire
             if (ajouterbtn.Text == "Modifier")
             {
 
-                Animal a = new Animal(ClientCombo.Text, animalnomBox.Text.Trim(), categorieBox.Text.Trim(), Convert.ToInt16(ageBox.Text.Trim()), Convert.ToDouble(poidsBox.Text.Trim()), sexeBox.Text.Trim(), raceBox.Text.Trim());
+                Animal a = new Animal(comboBox1.Text, animalnomBox.Text.Trim(), categorieBox.Text.Trim(), Convert.ToInt16(ageBox.Text.Trim()), Convert.ToDouble(poidsBox.Text.Trim()), sexeBox.Text.Trim(), raceBox.Text.Trim());
 
                 Animaldb.UpdateAnimal(a, id);
                 Clear();

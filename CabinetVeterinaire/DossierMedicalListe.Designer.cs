@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.guna2Button8);
             this.panel1.Location = new System.Drawing.Point(0, 129);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 652);
+            this.panel1.Size = new System.Drawing.Size(300, 777);
             this.panel1.TabIndex = 3;
             // 
             // guna2Button7
@@ -145,6 +145,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(297, 68);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "Stock";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button5
             // 
@@ -250,7 +251,7 @@
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(-24, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1581, 133);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1818, 133);
             this.guna2CustomGradientPanel1.TabIndex = 2;
             // 
             // dataGridView1
@@ -325,48 +326,48 @@
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "nom";
-            this.Column1.HeaderText = "Nom";
+            this.Column1.DataPropertyName = "nomAnimal";
+            this.Column1.HeaderText = "Animal";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "prenom";
-            this.Column2.HeaderText = "Prenom";
+            this.Column2.DataPropertyName = "diagnostic";
+            this.Column2.HeaderText = "Diagnostic";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "CIN";
-            this.Column3.HeaderText = "CIN";
+            this.Column3.DataPropertyName = "vaccin";
+            this.Column3.HeaderText = "Vaccin";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "email";
-            this.Column4.HeaderText = "Email";
+            this.Column4.DataPropertyName = "ordonance";
+            this.Column4.HeaderText = "Ordonance";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "adresse";
-            this.Column5.HeaderText = "Adresse";
+            this.Column5.DataPropertyName = "analyseMedical";
+            this.Column5.HeaderText = "AnalyseMedical";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "telephone";
-            this.Column6.HeaderText = "Telephone";
+            this.Column6.DataPropertyName = "radiologie";
+            this.Column6.HeaderText = "Radiologie";
             this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -406,13 +407,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CabinetVeterinaire.Properties.Resources.shutterstock_1361660567;
-            this.ClientSize = new System.Drawing.Size(1532, 740);
+            this.ClientSize = new System.Drawing.Size(1784, 903);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DossierMedicalListe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DossierMedicalListe";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

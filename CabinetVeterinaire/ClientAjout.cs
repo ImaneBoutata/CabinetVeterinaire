@@ -24,6 +24,12 @@ namespace CabinetVeterinaire
             InitializeComponent();
             
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         public void UpdateInfo()
         {
            // textForm.Text = "Modifier un client ";

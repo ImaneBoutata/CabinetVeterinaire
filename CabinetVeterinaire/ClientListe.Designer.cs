@@ -141,6 +141,7 @@
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button5
             // 

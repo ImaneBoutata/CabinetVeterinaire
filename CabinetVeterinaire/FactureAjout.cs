@@ -30,8 +30,8 @@ namespace CabinetVeterinaire
         {
             // textForm.Text = "Modifier un client ";
             Ajouterbtn.Text = "Modifier";
-            ClientCombo.Text = cinClient;
-            AnimalCombo.Text = nomAnimal;
+            comboBox1.Text = cinClient;
+            comboBox2.Text = nomAnimal;
             referenceBox.Text = reference;
             montantBox.Text = montant.ToString();
             modeBox.Text = modePaiement;
@@ -40,7 +40,7 @@ namespace CabinetVeterinaire
         }
         public void Clear()
         {
-            ClientCombo.Text = AnimalCombo.Text = referenceBox.Text = montantBox.Text = modeBox.Text = String.Empty;
+            comboBox1.Text = comboBox2.Text = referenceBox.Text = montantBox.Text = modeBox.Text = String.Empty;
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -55,8 +55,8 @@ namespace CabinetVeterinaire
 
         private void FactureAjout_Load(object sender, EventArgs e)
         {
-            Facturedb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", ClientCombo);
-            Facturedb.DisplayComboBoxAnimal("SELECT NOM FROM ANIMAL", AnimalCombo);
+            Facturedb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", comboBox1);
+            Facturedb.DisplayComboBoxAnimal("SELECT NOM FROM ANIMAL", comboBox2);
 
         }
 
@@ -64,7 +64,7 @@ namespace CabinetVeterinaire
         {
             if (Ajouterbtn.Text == "Ajouter")
             {
-                Facture f = new Facture(ClientCombo.Text.Trim(), AnimalCombo.Text.Trim(), referenceBox.Text.Trim(), Convert.ToDouble(montantBox.Text.Trim()), modeBox.Text.Trim());
+                Facture f = new Facture(comboBox1.Text.Trim(), comboBox2.Text.Trim(), referenceBox.Text.Trim(), Convert.ToDouble(montantBox.Text.Trim()), modeBox.Text.Trim());
                 Facturedb.AddFacture(f);
                   Clear();
 
@@ -72,7 +72,7 @@ namespace CabinetVeterinaire
             if (Ajouterbtn.Text == "Modifier")
             {
 
-                Facture f = new Facture(ClientCombo.Text.Trim(), AnimalCombo.Text.Trim(), referenceBox.Text.Trim(), Convert.ToDouble(montantBox.Text.Trim()), modeBox.Text.Trim());
+                Facture f = new Facture(comboBox1.Text.Trim(), comboBox2.Text.Trim(), referenceBox.Text.Trim(), Convert.ToDouble(montantBox.Text.Trim()), modeBox.Text.Trim());
 
                 Facturedb.UpdateFacture(f, id);
                   Clear();

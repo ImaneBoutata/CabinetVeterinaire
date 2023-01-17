@@ -105,7 +105,7 @@
             this.panel1.Controls.Add(this.guna2Button8);
             this.panel1.Location = new System.Drawing.Point(0, 129);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 652);
+            this.panel1.Size = new System.Drawing.Size(300, 786);
             this.panel1.TabIndex = 7;
             // 
             // guna2Button7
@@ -144,6 +144,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(297, 68);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "Stock";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button5
             // 
@@ -249,7 +250,7 @@
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(-17, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1581, 133);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1806, 133);
             this.guna2CustomGradientPanel1.TabIndex = 6;
             // 
             // dataGridView1
@@ -397,13 +398,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CabinetVeterinaire.Properties.Resources.shutterstock_1361660567;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1547, 738);
+            this.ClientSize = new System.Drawing.Size(1784, 903);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RendezVousListe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RendezVousListe";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -18,7 +18,7 @@ namespace CabinetVeterinaire
            
         }
 
-      =
+      
 
         private void formsPlot1_Load(object sender, EventArgs e)
         {

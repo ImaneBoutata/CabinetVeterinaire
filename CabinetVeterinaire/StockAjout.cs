@@ -18,7 +18,8 @@ namespace CabinetVeterinaire
             _parent = parent;
             InitializeComponent();
         }
-        public string reference, categorie, prix;
+        public string reference, categorie;
+        public double prix;
         public int id;
         public int qte;
 
@@ -30,7 +31,7 @@ namespace CabinetVeterinaire
             referencebox.Text = reference;
             CategorieCombo.Text = categorie;
             qtebox.Text = qte.ToString();
-            prixbox.Text = prix;
+            prixbox.Text = prix.ToString();
 
 
 
@@ -39,13 +40,19 @@ namespace CabinetVeterinaire
         {
             referencebox.Text = CategorieCombo.Text = qtebox.Text = prixbox.Text = String.Empty;
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void Ajouterbtn_Click(object sender, EventArgs e)
         {
             if (Ajouterbtn.Text == "Ajouter")
             {
 
                 Stock c = new Stock(referencebox.Text.Trim(), CategorieCombo.Text.Trim(), Convert.ToInt16(qtebox.Text.Trim()), prixbox.Text.Trim());
-               // Stockdb.AddRdv(c);
+                Stockdb.AddStock(c);
                 Clear();
 
             }
@@ -54,8 +61,8 @@ namespace CabinetVeterinaire
 
                 Stock c = new Stock(referencebox.Text.Trim(), CategorieCombo.Text.Trim(), Convert.ToInt16(qtebox.Text.Trim()), prixbox.Text.Trim());
 
-                //Stockdb.UpdateRdv(c, id);
-                //Clear();
+                Stockdb.UpdateStock(c, id);
+                Clear();
 
             }
             _parent.Display();

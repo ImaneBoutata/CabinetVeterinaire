@@ -69,7 +69,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -108,7 +107,7 @@
             this.panel1.Controls.Add(this.guna2Button8);
             this.panel1.Location = new System.Drawing.Point(-1, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 652);
+            this.panel1.Size = new System.Drawing.Size(300, 777);
             this.panel1.TabIndex = 6;
             // 
             // guna2Button7
@@ -147,6 +146,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(297, 68);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "Stock";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button5
             // 
@@ -252,7 +252,7 @@
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(-66, -1);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1581, 133);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1856, 133);
             this.guna2CustomGradientPanel1.TabIndex = 5;
             // 
             // dataGridView1
@@ -286,7 +286,6 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
             this.dataGridViewButtonColumn1,
             this.dataGridViewButtonColumn2});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -313,7 +312,7 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 50;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 432);
+            this.dataGridView1.Size = new System.Drawing.Size(1264, 432);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -327,51 +326,43 @@
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "nom";
-            this.Column1.HeaderText = "Nom";
+            this.Column1.DataPropertyName = "cinClient";
+            this.Column1.HeaderText = "Client";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "prenom";
-            this.Column2.HeaderText = "Prenom";
+            this.Column2.DataPropertyName = "nomAnimal";
+            this.Column2.HeaderText = "Animal";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "CIN";
-            this.Column3.HeaderText = "CIN";
+            this.Column3.DataPropertyName = "reference";
+            this.Column3.HeaderText = "Réference";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "email";
-            this.Column4.HeaderText = "Email";
+            this.Column4.DataPropertyName = "montant";
+            this.Column4.HeaderText = "Montant";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "adresse";
-            this.Column5.HeaderText = "Adresse";
+            this.Column5.DataPropertyName = "modePaiement";
+            this.Column5.HeaderText = "ModePaiement";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "telephone";
-            this.Column6.HeaderText = "Telephone";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // dataGridViewButtonColumn1
             // 
@@ -409,13 +400,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CabinetVeterinaire.Properties.Resources.shutterstock_1361660567;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1658, 790);
+            this.ClientSize = new System.Drawing.Size(1784, 903);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FactureListe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FactureListe";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -442,7 +434,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
     }

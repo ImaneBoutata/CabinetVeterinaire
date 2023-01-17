@@ -20,9 +20,9 @@ namespace CabinetVeterinaire
 
         private void sign_Click(object sender, EventArgs e)
         {
-            if (Utilisateurdb.seConnecter(textBox1.Text, textBox2.Text) == true)
+            if (Utilisateurdb.seConnecter(loginbox.Text, passwordbox.Text) == true)
             {
-                Dashbord d = new Dashbord();
+                Dashboard d = new Dashboard();
 
                 d.Show();
                 this.Hide();

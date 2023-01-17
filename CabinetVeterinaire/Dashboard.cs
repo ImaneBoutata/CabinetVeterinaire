@@ -42,6 +42,13 @@ namespace CabinetVeterinaire
             UtilisateurListe u = new UtilisateurListe();
             u.Show();
         }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            StockListecs c = new StockListecs();
+            c.Show();
+            this.Hide();
+        }
     }
 
 

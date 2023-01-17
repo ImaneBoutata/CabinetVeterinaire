@@ -306,7 +306,7 @@
     <value>0, 129</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 652</value>
+    <value>300, 776</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -327,7 +327,7 @@
     <value>-34, 0</value>
   </data>
   <data name="guna2CustomGradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1581, 133</value>
+    <value>1832, 133</value>
   </data>
   <data name="guna2CustomGradientPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -463,13 +463,13 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1512, 849</value>
+    <value>1784, 903</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>410, 250</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>Manual</value>
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ClientListe</value>

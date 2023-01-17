@@ -42,6 +42,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.nomBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,7 +56,10 @@
             this.adresseBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.telephoneBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ajouterbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nomBox
@@ -63,7 +67,6 @@
             this.nomBox.BackColor = System.Drawing.Color.Transparent;
             this.nomBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.nomBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(221)))), ((int)(((byte)(182)))));
-            this.nomBox.BorderRadius = 15;
             this.nomBox.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.nomBox.BorderThickness = 0;
             this.nomBox.CustomizableEdges = customizableEdges1;
@@ -75,13 +78,13 @@
             this.nomBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nomBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nomBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.nomBox.Location = new System.Drawing.Point(419, 272);
+            this.nomBox.Location = new System.Drawing.Point(914, 226);
             this.nomBox.Name = "nomBox";
             this.nomBox.PasswordChar = '\0';
             this.nomBox.PlaceholderText = "";
             this.nomBox.SelectedText = "";
             this.nomBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.nomBox.Size = new System.Drawing.Size(229, 39);
+            this.nomBox.Size = new System.Drawing.Size(229, 36);
             this.nomBox.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -89,7 +92,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(176, 279);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(671, 230);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(74, 32);
             this.guna2HtmlLabel1.TabIndex = 2;
@@ -100,7 +103,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(176, 347);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(671, 298);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(113, 32);
             this.guna2HtmlLabel2.TabIndex = 3;
@@ -111,7 +114,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(176, 417);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(671, 368);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(67, 32);
             this.guna2HtmlLabel3.TabIndex = 4;
@@ -122,7 +125,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(176, 473);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(671, 424);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(94, 32);
             this.guna2HtmlLabel4.TabIndex = 5;
@@ -133,7 +136,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(176, 540);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(671, 491);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(111, 32);
             this.guna2HtmlLabel5.TabIndex = 6;
@@ -144,7 +147,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(176, 609);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(671, 560);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(144, 32);
             this.guna2HtmlLabel6.TabIndex = 7;
@@ -153,7 +156,6 @@
             // prenomBox
             // 
             this.prenomBox.BackColor = System.Drawing.Color.Transparent;
-            this.prenomBox.BorderRadius = 15;
             this.prenomBox.CustomizableEdges = customizableEdges3;
             this.prenomBox.DefaultText = "";
             this.prenomBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -163,7 +165,7 @@
             this.prenomBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.prenomBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.prenomBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.prenomBox.Location = new System.Drawing.Point(419, 337);
+            this.prenomBox.Location = new System.Drawing.Point(914, 294);
             this.prenomBox.Name = "prenomBox";
             this.prenomBox.PasswordChar = '\0';
             this.prenomBox.PlaceholderText = "";
@@ -175,7 +177,6 @@
             // cinBox
             // 
             this.cinBox.BackColor = System.Drawing.Color.Transparent;
-            this.cinBox.BorderRadius = 15;
             this.cinBox.CustomizableEdges = customizableEdges5;
             this.cinBox.DefaultText = "";
             this.cinBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -185,7 +186,7 @@
             this.cinBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cinBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cinBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cinBox.Location = new System.Drawing.Point(419, 407);
+            this.cinBox.Location = new System.Drawing.Point(914, 358);
             this.cinBox.Name = "cinBox";
             this.cinBox.PasswordChar = '\0';
             this.cinBox.PlaceholderText = "";
@@ -197,7 +198,6 @@
             // emailBox
             // 
             this.emailBox.BackColor = System.Drawing.Color.Transparent;
-            this.emailBox.BorderRadius = 15;
             this.emailBox.CustomizableEdges = customizableEdges7;
             this.emailBox.DefaultText = "";
             this.emailBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -207,7 +207,7 @@
             this.emailBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.emailBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.emailBox.Location = new System.Drawing.Point(419, 468);
+            this.emailBox.Location = new System.Drawing.Point(914, 419);
             this.emailBox.Name = "emailBox";
             this.emailBox.PasswordChar = '\0';
             this.emailBox.PlaceholderText = "";
@@ -219,7 +219,6 @@
             // adresseBox
             // 
             this.adresseBox.BackColor = System.Drawing.Color.Transparent;
-            this.adresseBox.BorderRadius = 15;
             this.adresseBox.CustomizableEdges = customizableEdges9;
             this.adresseBox.DefaultText = "";
             this.adresseBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -229,7 +228,7 @@
             this.adresseBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.adresseBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.adresseBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.adresseBox.Location = new System.Drawing.Point(419, 530);
+            this.adresseBox.Location = new System.Drawing.Point(914, 481);
             this.adresseBox.Name = "adresseBox";
             this.adresseBox.PasswordChar = '\0';
             this.adresseBox.PlaceholderText = "";
@@ -241,7 +240,6 @@
             // telephoneBox
             // 
             this.telephoneBox.BackColor = System.Drawing.Color.Transparent;
-            this.telephoneBox.BorderRadius = 15;
             this.telephoneBox.CustomizableEdges = customizableEdges11;
             this.telephoneBox.DefaultText = "";
             this.telephoneBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -251,7 +249,7 @@
             this.telephoneBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.telephoneBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.telephoneBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.telephoneBox.Location = new System.Drawing.Point(419, 599);
+            this.telephoneBox.Location = new System.Drawing.Point(914, 550);
             this.telephoneBox.Name = "telephoneBox";
             this.telephoneBox.PasswordChar = '\0';
             this.telephoneBox.PlaceholderText = "";
@@ -272,7 +270,7 @@
             this.ajouterbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(221)))), ((int)(((byte)(182)))));
             this.ajouterbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ajouterbtn.ForeColor = System.Drawing.Color.White;
-            this.ajouterbtn.Location = new System.Drawing.Point(775, 582);
+            this.ajouterbtn.Location = new System.Drawing.Point(874, 632);
             this.ajouterbtn.Name = "ajouterbtn";
             this.ajouterbtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.ajouterbtn.Size = new System.Drawing.Size(162, 59);
@@ -280,16 +278,44 @@
             this.ajouterbtn.Text = "Ajouter";
             this.ajouterbtn.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.CadetBlue;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(1203, 28);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(44, 42);
+            this.guna2CircleButton1.TabIndex = 67;
+            this.guna2CircleButton1.Text = "X";
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            // 
             // guna2HtmlLabel7
             // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(430, 108);
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Modern No. 20", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(524, 75);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(77, 32);
-            this.guna2HtmlLabel7.TabIndex = 26;
-            this.guna2HtmlLabel7.Text = "Client";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(214, 43);
+            this.guna2HtmlLabel7.TabIndex = 66;
+            this.guna2HtmlLabel7.Text = "Ajout Client";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CabinetVeterinaire.Properties.Resources.vet;
+            this.pictureBox1.Location = new System.Drawing.Point(158, 242);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(393, 329);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
             // 
             // ClientAjout
             // 
@@ -297,7 +323,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(1259, 762);
+            this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.guna2HtmlLabel7);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ajouterbtn);
             this.Controls.Add(this.telephoneBox);
             this.Controls.Add(this.adresseBox);
@@ -314,6 +342,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientAjout";
             this.Text = "ClientAjout";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,6 +362,8 @@
         private Guna.UI2.WinForms.Guna2TextBox adresseBox;
         private Guna.UI2.WinForms.Guna2TextBox telephoneBox;
         private Guna.UI2.WinForms.Guna2Button ajouterbtn;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private PictureBox pictureBox1;
     }
 }

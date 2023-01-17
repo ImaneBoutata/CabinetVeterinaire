@@ -78,6 +78,7 @@
             this.guna2CircleButton1.Size = new System.Drawing.Size(44, 42);
             this.guna2CircleButton1.TabIndex = 80;
             this.guna2CircleButton1.Text = "X";
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // guna2HtmlLabel8
             // 
@@ -175,6 +176,10 @@
             // CategorieCombo
             // 
             this.CategorieCombo.FormattingEnabled = true;
+            this.CategorieCombo.Items.AddRange(new object[] {
+            "Médicaments",
+            "Appareils",
+            "Produits"});
             this.CategorieCombo.Location = new System.Drawing.Point(793, 275);
             this.CategorieCombo.Name = "CategorieCombo";
             this.CategorieCombo.Size = new System.Drawing.Size(210, 33);
