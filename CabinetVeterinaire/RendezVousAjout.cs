@@ -23,6 +23,11 @@ namespace CabinetVeterinaire
             InitializeComponent();
         }
 
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void RendezVousAjout_Load(object sender, EventArgs e)
         {
             RendezVousdb.DisplayComboBoxClient("SELECT CIN FROM CLIENT", ClientCombo);

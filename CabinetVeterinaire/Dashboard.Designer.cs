@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,7 +53,6 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +67,7 @@
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(1, 1);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1581, 133);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1784, 133);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // panel1
@@ -84,7 +82,7 @@
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Location = new System.Drawing.Point(0, 133);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 652);
+            this.panel1.Size = new System.Drawing.Size(300, 771);
             this.panel1.TabIndex = 1;
             // 
             // guna2Button7
@@ -218,17 +216,12 @@
             this.guna2Button1.Text = "Client";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1579, 785);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(66)))), ((int)(((byte)(58)))));
+            this.ClientSize = new System.Drawing.Size(1784, 903);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -251,6 +244,5 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private NotifyIcon notifyIcon1;
     }
 }

@@ -43,6 +43,11 @@ namespace CabinetVeterinaire
             ClientCombo.Text = AnimalCombo.Text = referenceBox.Text = montantBox.Text = modeBox.Text = String.Empty;
         }
 
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void ClientCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -60,18 +65,6 @@ namespace CabinetVeterinaire
             if (Ajouterbtn.Text == "Ajouter")
             {
                 Facture f = new Facture(ClientCombo.Text.Trim(), AnimalCombo.Text.Trim(), referenceBox.Text.Trim(), Convert.ToDouble(montantBox.Text.Trim()), modeBox.Text.Trim());
-                //textForm.Text = "Ajouter un client ";
-                Ajouterbtn.Text = "Ajouter";
-
-                cinClient = ClientCombo.Text;
-                nomAnimal = AnimalCombo.Text;
-                reference = referenceBox.Text;
-                montant = Convert.ToDouble(montantBox.Text);
-                modePaiement = modeBox.Text;
-
-
-
-
                 Facturedb.AddFacture(f);
                   Clear();
 

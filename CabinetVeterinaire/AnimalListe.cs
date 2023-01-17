@@ -28,11 +28,11 @@ namespace CabinetVeterinaire
         }
         public void Display()
         {
-            Animaldb.DisplayAndSearch("SELECT  ID,CINCLIENT,NOM,CATEGORIE,AGE,POIDS,SEXE,RACE FROM ANIMAL", animalgrid);
+            Animaldb.DisplayAndSearch("SELECT  * FROM ANIMAL", datagrid1);
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {/*
 
             if (e.ColumnIndex == 0)
             {
@@ -62,7 +62,76 @@ namespace CabinetVeterinaire
 
 
                 return;
+            }*/
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                //Edit
+                animalAjout.Clear();
+                animalAjout.id = Convert.ToInt16(datagrid1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                animalAjout.cinClient = datagrid1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                animalAjout.nom = datagrid1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                animalAjout.categorie = datagrid1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                animalAjout.age = Convert.ToInt16(datagrid1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                animalAjout.poids = Convert.ToDouble(datagrid1.Rows[e.RowIndex].Cells[7].Value.ToString());
+                animalAjout.sexe = datagrid1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                animalAjout.race = datagrid1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                animalAjout.UpdateInfo();
+                animalAjout.ShowDialog();
+                return;
             }
+            if (e.ColumnIndex == 1)
+
+            //Delete
+            {
+                if (MessageBox.Show("Vous voulez vraiment supprimer cet animal ?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    Animaldb.DeleteAnimal(Convert.ToInt32(datagrid1.Rows[e.RowIndex].Cells[2].Value.ToString()));
+                    Display();
+                }
+
+
+                return;
+            }
+
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            ClientListe c = new ClientListe();
+            c.Show();
+            this.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            FactureListe c = new FactureListe();
+            c.Show();
+            this.Hide();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            DossierMedicalListe c = new DossierMedicalListe();
+            c.Show();
+            this.Hide();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            RendezVousListe c = new RendezVousListe();
+            c.Show();
+            this.Hide();
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            UtilisateurListe c = new UtilisateurListe();
+            c.Show();
+            this.Hide();
         }
     }
 }

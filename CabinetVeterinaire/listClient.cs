@@ -15,40 +15,24 @@ namespace CabinetVeterinaire
         public listClient()
         {
             InitializeComponent();
-            Display();
+           
         }
 
-        public void Display()
+      =
+
+        private void formsPlot1_Load(object sender, EventArgs e)
         {
-            Clientdb.DisplayAndSearch("SELECT  ID,Nom,Prenom,Cin,email,adresse,telephone FROM CLIENT", clientgridview);
-        }
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           /* if (e.ColumnIndex == 0)
-            {
-                //Edit
-                clientInterface.Clear();
-                clientInterface.id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                clientInterface.nom = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                clientInterface.prenom = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                clientInterface.CIN = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                clientInterface.UpdateInfo();
-                clientInterface.ShowDialog();
-                return;
-            }
-            if (e.ColumnIndex == 1)
-
-            //Delete
-            {
-                if (MessageBox.Show("Vous voulez vraiment supprimer ce client ?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    Clientdb.DeleteClient(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-                    Display();
-                }
-
-
-                return;
-            }*/
+            double[] values = { 789, 143, 283 };
+            string[] labels = { "America", "China", "Canada" };
+            Color[] labelcolors = { Color.White, Color.White, Color.White, };
+            Color[] slicecolors = { Color.Red, Color.Coral, Color.Gold };
+            var pie = formsPlot1.Plot.AddPie(values);
+            pie.SliceLabels = labels;
+            pie.ShowLabels = true;
+            pie.SliceFillColors = slicecolors;
+            pie.SliceLabelColors = labelcolors;
+            formsPlot1.Refresh();
         }
     }
-}
+    }
+

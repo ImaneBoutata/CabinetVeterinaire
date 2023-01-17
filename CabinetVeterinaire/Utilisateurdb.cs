@@ -124,6 +124,61 @@ namespace CabinetVeterinaire
 
         }
 
+
+        public static Boolean seConnecter(String login, String password)
+        {
+            int i = 0;
+
+            if (login != "" && password != "")
+            {
+                try
+                {
+                    i = 0;
+                    string sql = "select login, password from utilisateur WHERE login = @login AND password = @password";
+                    MySqlConnection con = GetConnection();
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("@login", login);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                    DataTable tbl = new DataTable();
+                    adp.Fill(tbl);
+                    i = Convert.ToInt32(tbl.Rows.Count.ToString());
+                    if (i == 0)
+
+                    {
+                        MessageBox.Show("Nom d'utilisateur ou mot de passe est incorrect.\n", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return false;
+                    }
+
+                    else
+                    {
+                        con.Close();
+                        return true;
+                        //  main_form();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nom d'utilisateur ou mot de passe est incorrect.\n" + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("Les champs vide!!.\n", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+
         public static void DisplayAndSearch(string query, DataGridView dgv)
         {
             string sql = query;

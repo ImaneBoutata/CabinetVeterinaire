@@ -15,6 +15,12 @@ namespace CabinetVeterinaire
     {
         private readonly UtilisateurListe _parent;
         public string nom, prenom, login, password, email, telephone, role;
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         public int id;
         public UtilisateurAjout(UtilisateurListe parent)
         {
