@@ -55,10 +55,13 @@ namespace CabinetVeterinaire
         {
             if (Ajouterbtn.Text == "Ajouter")
             {
+                
 
                 RendezVous c = new RendezVous(comboBox1.Text.Trim(), comboBox2.Text.Trim(), daterdvpicker.Text.Trim(), heureBox.Text.Trim(), localbox.Text.Trim());
                 RendezVousdb.AddRdv(c);
                 Clear();
+              //  Client clt = 
+              //  Clientdb.conditionEmail("select * from rendezvous where dateRdv - sysdate < 2 ",);
 
             }
             if (Ajouterbtn.Text == "Modifier")

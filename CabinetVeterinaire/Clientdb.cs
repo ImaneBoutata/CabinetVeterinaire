@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+
 
 namespace CabinetVeterinaire
 {
@@ -118,10 +121,41 @@ namespace CabinetVeterinaire
             }
             conn.Close();
 
-
-
         }
 
+        public static void conditionEmail(string query)
+        {
+            
+
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader mydr = cmd.ExecuteReader();
+
+            while (mydr.Read())
+            {
+                notifs();
+
+            }
+           
+        }
+
+       /* public static string findByCin(String cin)
+        {
+
+        }*/
+
+        public static void notifs()
+        {
+            MailMessage mail = new MailMessage("homesmart437@gmail.com", "imanebt6@gmail.com", "suuject", "Bonjour Mr/Mme, la date de votre rendez-vous approche");
+            SmtpClient client = new SmtpClient("smtp.gmail.com");
+            // client.Port = 465;
+            client.Port = 587;
+            client.Credentials = new System.Net.NetworkCredential("homesmart437@gmail.com", "hmsrctkhxrweeejs");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Send(mail);
+            //MessageBox.Show("Success");
+        }
         public static void DisplayAndSearch(string query, DataGridView dgv)
         {
             string sql = query;

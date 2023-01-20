@@ -63,6 +63,26 @@ namespace CabinetVeterinaire.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendrier {
+            get {
+                object obj = ResourceManager.GetObject("calendrier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pattes {
+            get {
+                object obj = ResourceManager.GetObject("pattes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Petz {
             get {
                 object obj = ResourceManager.GetObject("Petz", resourceCulture);
@@ -76,6 +96,16 @@ namespace CabinetVeterinaire.Properties {
         internal static System.Drawing.Bitmap Petz__1__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Petz__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Petz__1__removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("Petz__1_-removebg-preview1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +136,16 @@ namespace CabinetVeterinaire.Properties {
         internal static System.Drawing.Bitmap Petz__9_ {
             get {
                 object obj = ResourceManager.GetObject("Petz (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap poignee_de_main {
+            get {
+                object obj = ResourceManager.GetObject("poignee-de-main", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

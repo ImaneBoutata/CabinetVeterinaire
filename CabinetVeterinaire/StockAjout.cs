@@ -51,7 +51,7 @@ namespace CabinetVeterinaire
             if (Ajouterbtn.Text == "Ajouter")
             {
 
-                Stock c = new Stock(referencebox.Text.Trim(), CategorieCombo.Text.Trim(), Convert.ToInt16(qtebox.Text.Trim()), prixbox.Text.Trim());
+                Stock c = new Stock(referencebox.Text.Trim(), CategorieCombo.Text.Trim(), Convert.ToInt16(qtebox.Text.Trim()), Convert.ToDouble(prixbox.Text.Trim()));
                 Stockdb.AddStock(c);
                 Clear();
 
@@ -59,7 +59,7 @@ namespace CabinetVeterinaire
             if (Ajouterbtn.Text == "Modifier")
             {
 
-                Stock c = new Stock(referencebox.Text.Trim(), CategorieCombo.Text.Trim(), Convert.ToInt16(qtebox.Text.Trim()), prixbox.Text.Trim());
+                Stock c = new Stock(referencebox.Text.Trim(), CategorieCombo.Text.Trim(), Convert.ToInt16(qtebox.Text.Trim()), Convert.ToDouble(prixbox.Text.Trim()));
 
                 Stockdb.UpdateStock(c, id);
                 Clear();

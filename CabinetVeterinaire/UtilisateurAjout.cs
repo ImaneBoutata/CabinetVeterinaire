@@ -14,7 +14,17 @@ namespace CabinetVeterinaire
     public partial class UtilisateurAjout : Form
     {
         private readonly UtilisateurListe _parent;
-        public string nom, prenom, login, password, email, telephone, role;
+        public string nom, prenom, login, password, email, telephone, role, encryptedPassword, decryptedPassword;
+        public byte[] key = Encoding.UTF8.GetBytes("kdjfzel5zkd6eonf");
+        public byte[] iv = Encoding.UTF8.GetBytes("ptrg9rej3ef5rjg6");
+        /*  // Encrypt the password
+          string password = "mypassword";
+          string encryptedPassword = Encrypt(password, key, iv);
+          Console.WriteLine("Encrypted password: " + encryptedPassword);
+
+          // Decrypt the password
+          string decryptedPassword = Decrypt(encryptedPassword, key, iv);
+          Console.WriteLine("Decrypted password: " + decryptedPassword);*/
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
@@ -50,16 +60,16 @@ namespace CabinetVeterinaire
         {
             if (Ajouterbtn.Text == "Ajouter")
             {
-
-                Utilisateur c = new Utilisateur(nombox.Text.Trim(), prenombox.Text.Trim(), loginbox.Text.Trim(), passwordbox.Text.Trim(), rolebox.Text.Trim(), emailbox.Text.Trim(), telephonebox.Text.Trim());
+                encryptedPassword = AesCryp.Encrypt(passwordbox.Text, key, iv);
+                Utilisateur c = new Utilisateur(nombox.Text.Trim(), prenombox.Text.Trim(), loginbox.Text.Trim(), encryptedPassword, rolebox.Text.Trim(), emailbox.Text.Trim(), telephonebox.Text.Trim());
                 Utilisateurdb.AddUtilisateur(c);
                 Clear();
 
             }
             if (Ajouterbtn.Text == "Modifier")
             {
-
-                Utilisateur c = new Utilisateur(nombox.Text.Trim(), prenombox.Text.Trim(), loginbox.Text.Trim(), passwordbox.Text.Trim(), rolebox.Text.Trim(), emailbox.Text.Trim(), telephonebox.Text.Trim());
+                encryptedPassword = AesCryp.Encrypt(passwordbox.Text, key, iv);
+                Utilisateur c = new Utilisateur(nombox.Text.Trim(), prenombox.Text.Trim(), loginbox.Text.Trim(), encryptedPassword, rolebox.Text.Trim(), emailbox.Text.Trim(), telephonebox.Text.Trim());
 
                 Utilisateurdb.UpdateUtilisateur(c, id);
                 Clear();

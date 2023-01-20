@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace CabinetVeterinaire
 {
@@ -22,7 +24,7 @@ namespace CabinetVeterinaire
 
         public void Display()
         {
-            DossierMedicaldb.DisplayAndSearch("SELECT  ID,NOMANIMAL,diagnostic,vaccin,ordonance,analyseMedical,radiologie FROM DOSSIERMEDICAL", dataGridView1);
+            DossierMedicaldb.DisplayAndSearch("SELECT  ID,NOMANIMAL,diagnostic,vaccin,ordonance,analyseMedical,radiologie ,image FROM DOSSIERMEDICAL", dataGridView1);
         }
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -75,6 +77,7 @@ namespace CabinetVeterinaire
                 DossierMedicalAjout.ordonance = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 DossierMedicalAjout.analyseMedical = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 DossierMedicalAjout.radiologie = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                
                 DossierMedicalAjout.UpdateInfo();
                 DossierMedicalAjout.ShowDialog();
                 return;
@@ -134,6 +137,158 @@ namespace CabinetVeterinaire
             StockListecs c = new StockListecs();
             c.Show();
             this.Hide();
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+
+            {
+
+                SaveFileDialog save = new SaveFileDialog();
+
+                save.Filter = "PDF (*.pdf)|*.pdf";
+
+                save.FileName = "Result.pdf";
+
+                bool ErrorMessage = false;
+
+                if (save.ShowDialog() == DialogResult.OK)
+
+                {
+
+                    if (File.Exists(save.FileName))
+
+                    {
+
+                        try
+
+                        {
+
+                            File.Delete(save.FileName);
+
+                        }
+
+                        catch (Exception ex)
+
+                        {
+
+                            ErrorMessage = true;
+
+                            MessageBox.Show("Unable to wride data in disk" + ex.Message);
+
+                        }
+
+                    }
+
+                    if (!ErrorMessage)
+
+                    {
+
+                        try
+
+                        {
+
+                            PdfPTable pTable = new PdfPTable(dataGridView1.Columns.Count);
+
+                            pTable.DefaultCell.Padding = 2;
+
+                            pTable.WidthPercentage = 100;
+
+                            // pTable.HorizontalAlignment = Element.a;
+
+                            foreach (DataGridViewColumn col in dataGridView1.Columns)
+
+                            {
+
+                                PdfPCell pCell = new PdfPCell(new iTextSharp.text.Phrase(col.HeaderText));
+
+                                pTable.AddCell(pCell);
+
+                            }
+
+                            foreach (DataGridViewRow viewRow in dataGridView1.Rows)
+
+                            {
+
+                                foreach (DataGridViewCell dcell in viewRow.Cells)
+
+                                {
+
+
+                                    pTable.AddCell(dcell.Value.ToString());
+
+                                }
+
+                            }
+
+
+                            using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+
+                            {
+                                iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4, 8f, 16f, 16f, 8f);
+
+                                PdfWriter.GetInstance(document, fileStream);
+
+                                foreach (DataGridViewRow viewRow in dataGridView1.Rows)
+
+                                {
+                                    string path = viewRow.Cells[6].Value.ToString();
+                                    document.Open();
+
+                                    document.Add(pTable);
+
+
+                                }
+
+
+
+
+
+
+
+                                document.Close();
+                                fileStream.Close();
+
+                            }
+
+                            MessageBox.Show("Data Export Successfully", "info");
+
+                        }
+
+                        catch (Exception ex)
+
+                        {
+
+                            MessageBox.Show("Error while exporting Data" + ex.Message);
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            else
+
+            {
+
+                MessageBox.Show("No Record Found", "Info");
+
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Dashboard d = new Dashboard();
+            d.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

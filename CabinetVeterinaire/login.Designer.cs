@@ -63,13 +63,13 @@
             this.loginbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.loginbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loginbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loginbox.Location = new System.Drawing.Point(1097, 303);
+            this.loginbox.Location = new System.Drawing.Point(1074, 238);
             this.loginbox.Name = "loginbox";
             this.loginbox.PasswordChar = '\0';
-            this.loginbox.PlaceholderText = "";
+            this.loginbox.PlaceholderText = "Login";
             this.loginbox.SelectedText = "";
             this.loginbox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.loginbox.Size = new System.Drawing.Size(217, 44);
+            this.loginbox.Size = new System.Drawing.Size(257, 36);
             this.loginbox.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -94,13 +94,13 @@
             this.passwordbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passwordbox.Location = new System.Drawing.Point(1097, 363);
+            this.passwordbox.Location = new System.Drawing.Point(1074, 326);
             this.passwordbox.Name = "passwordbox";
-            this.passwordbox.PasswordChar = '\0';
-            this.passwordbox.PlaceholderText = "";
+            this.passwordbox.PasswordChar = '*';
+            this.passwordbox.PlaceholderText = "password";
             this.passwordbox.SelectedText = "";
             this.passwordbox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.passwordbox.Size = new System.Drawing.Size(217, 44);
+            this.passwordbox.Size = new System.Drawing.Size(257, 37);
             this.passwordbox.TabIndex = 3;
             // 
             // sign
@@ -114,7 +114,7 @@
             this.sign.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(221)))), ((int)(((byte)(182)))));
             this.sign.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sign.ForeColor = System.Drawing.Color.White;
-            this.sign.Location = new System.Drawing.Point(1160, 471);
+            this.sign.Location = new System.Drawing.Point(1150, 404);
             this.sign.Name = "sign";
             this.sign.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.sign.Size = new System.Drawing.Size(118, 51);

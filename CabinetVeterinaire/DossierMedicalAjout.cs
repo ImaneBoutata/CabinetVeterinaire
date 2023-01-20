@@ -9,6 +9,7 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Path = System.IO.Path;
 
 namespace CabinetVeterinaire
 {
@@ -20,11 +21,51 @@ namespace CabinetVeterinaire
 
         private void DossierMedicalAjout_Load(object sender, EventArgs e)
         {
-            Facturedb.DisplayComboBoxAnimal("SELECT NOM FROM ANIMAL", AnimalCombo);
+            Facturedb.DisplayComboBoxAnimal("SELECT NOM FROM ANIMAL", comboBox1);
 
         }
 
          private readonly DossierMedicalListe _parent;
+
+        private void chooseImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Choisir une Image(*.jpg;*.jpeg;*.gif;) | *.jpg;*.jpeg;*.gif;";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                imageText.Text = dlg.FileName;
+                pictureBox1.Image = new Bitmap(dlg.FileName);
+                pictureBox1.ImageLocation = dlg.FileName;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Choisir une Image(*.jpg;*.jpeg;*.gif;) | *.jpg;*.jpeg;*.gif;";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                imageText.Text = dlg.FileName;
+                pictureBox1.Image = new Bitmap(dlg.FileName);
+                pictureBox1.ImageLocation = dlg.FileName;
+            }
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CircleButton1_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         public DossierMedicalAjout(DossierMedicalListe parent)
         {
               _parent = parent;
@@ -36,10 +77,10 @@ namespace CabinetVeterinaire
         {
             // textForm.Text = "Modifier un client ";
             Ajouterbtn.Text = "Modifier";
-            AnimalCombo.Text = nomAnimal;
+            comboBox1.Text = nomAnimal;
            // diagnostic.Text = nomAnimal;
             vaccinbox.Text = vaccin;
-            ordonancebox.Text = ordonance;
+            diagnosticbox.Text = ordonance;
             analysebox.Text = analyseMedical;
             radiologiebox.Text = radiologie;
 
@@ -47,29 +88,34 @@ namespace CabinetVeterinaire
         }
         public void Clear()
         {
-            AnimalCombo.Text /*= AnimalCombo.Text*/ = vaccinbox.Text = ordonancebox.Text = analysebox.Text = radiologiebox.Text = String.Empty;
+            comboBox1.Text /*= AnimalCombo.Text*/ = vaccinbox.Text = diagnosticbox.Text = analysebox.Text = radiologiebox.Text = String.Empty;
         }
 
         private void Ajouterbtn_Click(object sender, EventArgs e)
         {
             if (Ajouterbtn.Text == "Ajouter")
             {
+                File.Copy(imageText.Text, Application.StartupPath + @"/image/" + Path.GetFileName(pictureBox1.ImageLocation));
 
-                DossierMedical c = new DossierMedical(AnimalCombo.Text.Trim(), diagnostic, vaccinbox.Text.Trim(), ordonancebox.Text.Trim(), analysebox.Text.Trim(), radiologiebox.Text.Trim());
+
+
+                DossierMedical c = new DossierMedical(comboBox1.Text.Trim(), diagnosticbox.Text, vaccinbox.Text.Trim(), diagnosticbox.Text.Trim(), analysebox.Text.Trim(), radiologiebox.Text.Trim(), Path.GetFileName(pictureBox1.ImageLocation));
                 DossierMedicaldb.AddDossierMedical(c);
-               // Clear();
+               Clear();
 
             }
             if (Ajouterbtn.Text == "Modifier")
             {
+                File.Copy(imageText.Text, Application.StartupPath + @"/image/" + Path.GetFileName(pictureBox1.ImageLocation));
 
-               DossierMedical c = new DossierMedical(AnimalCombo.Text.Trim(), diagnostic, vaccinbox.Text.Trim(), ordonancebox.Text.Trim(), analysebox.Text.Trim(), radiologiebox.Text.Trim());
+
+                DossierMedical c = new DossierMedical(comboBox1.Text.Trim(), diagnosticbox.Text, vaccinbox.Text.Trim(), diagnosticbox.Text.Trim(), analysebox.Text.Trim(), radiologiebox.Text.Trim(), Path.GetFileName(pictureBox1.ImageLocation));
 
                 DossierMedicaldb.UpdateDossierMedical(c, id);
-               // Clear();
+                Clear();
 
             }
-           // _parent.Display();
+            _parent.Display();
         }
 
 
@@ -77,7 +123,7 @@ namespace CabinetVeterinaire
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+           /*  OpenFileDialog openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 // Get the path of specified file
@@ -98,7 +144,7 @@ namespace CabinetVeterinaire
                 } 
 
                
-            }
+            }*/
         }
     }
 }

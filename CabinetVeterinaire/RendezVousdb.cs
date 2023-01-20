@@ -70,7 +70,7 @@ namespace CabinetVeterinaire
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@Clientid", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@Rendezvousid", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@cinClient", MySqlDbType.VarChar).Value = c.CinClient;
             cmd.Parameters.Add("@nomAnimal", MySqlDbType.VarChar).Value = c.NomAnimal;
             cmd.Parameters.Add("@dateRdv", MySqlDbType.VarChar).Value = c.DateRdv;
@@ -151,6 +151,39 @@ namespace CabinetVeterinaire
                 c.Items.Add(mydr.GetString("cin"));
             }
 
+        }
+
+        public static int categorieChat()
+        {
+            int a = 0;
+
+            MySqlConnection con = GetConnection();
+            string q = "select * from animal where categorie='chat'";
+            MySqlCommand cmd = new MySqlCommand(q, con);
+            MySqlDataReader mydr = cmd.ExecuteReader();
+
+            while (mydr.Read())
+            {
+                a = a + 1;
+               
+            }
+            return a;
+        }
+
+        public static int howMany(string query)
+        {
+            int a = 0;
+
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader mydr = cmd.ExecuteReader();
+
+            while (mydr.Read())
+            {
+                a = a + 1;
+
+            }
+            return a;
         }
 
         public static void DisplayComboBoxAnimal(string query, ComboBox c)

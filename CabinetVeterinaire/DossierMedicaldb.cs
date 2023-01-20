@@ -33,7 +33,7 @@ namespace CabinetVeterinaire
         public static void AddDossierMedical(DossierMedical c)
         {
             
-            string sql = "INSERT INTO DossierMedical VALUES (NULL, @nomAnimal, @diagnostic, @vaccin, @ordonance, @analyseMedical, @radiologie)";
+            string sql = "INSERT INTO DossierMedical VALUES (NULL, @nomAnimal, @diagnostic, @vaccin, @ordonance, @analyseMedical, @radiologie, @image)";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = System.Data.CommandType.Text;
@@ -44,6 +44,7 @@ namespace CabinetVeterinaire
             cmd.Parameters.Add("@ordonance", MySqlDbType.VarChar).Value = c.Ordonance;
             cmd.Parameters.Add("@analyseMedical", MySqlDbType.VarChar).Value = c.AnalyseMedical;
             cmd.Parameters.Add("@radiologie", MySqlDbType.VarChar).Value = c.Radiologie;
+            cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = c.Image;
 
 
 
@@ -66,7 +67,7 @@ namespace CabinetVeterinaire
 
         public static void UpdateDossierMedical(DossierMedical c, int id)
         {
-            string sql = "Update DossierMedical SET nomAnimal=@nomAnimal,diagnostic=@diagnostic,vaccin=@vaccin, ordonance=@ordonance, AnalyseMedical=@AnalyseMedical, radiologie=@radiologie where id=@dossierMedicalId";
+            string sql = "Update DossierMedical SET nomAnimal=@nomAnimal,diagnostic=@diagnostic,vaccin=@vaccin, ordonance=@ordonance, AnalyseMedical=@AnalyseMedical, radiologie=@radiologie, image=@image where id=@dossierMedicalId";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
@@ -77,6 +78,7 @@ namespace CabinetVeterinaire
             cmd.Parameters.Add("@ordonance", MySqlDbType.VarChar).Value = c.Ordonance;
             cmd.Parameters.Add("@analyseMedical", MySqlDbType.VarChar).Value = c.AnalyseMedical;
             cmd.Parameters.Add("@radiologie", MySqlDbType.VarChar).Value = c.Radiologie;
+            cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = c.Image;
 
 
 
@@ -131,13 +133,15 @@ namespace CabinetVeterinaire
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataTable tbl = new DataTable();
             adp.Fill(tbl);
-           // tbl.Columns.Add("PICTURE", Type.GetType("System.Byte[]"));//////////
-           // foreach (DataRow row in tbl.Rows)
-            //{
-             //   row["PICTURE"] = File.ReadAllBytes(Application.StartupPath + @"\IMAGE\" + Path.GetFileName(row["DIAGNOSTIC"].ToString()));
-           // }
+           
             dgv.DataSource = tbl;
             con.Close();
+            tbl.Columns.Add("PICTURE", Type.GetType("System.Byte[]"));
+            foreach (DataRow row in tbl.Rows)
+            {
+                row["PICTURE"] = File.ReadAllBytes(Application.StartupPath + @"/image/" + Path.GetFileName(row["image"].ToString()));
+            }
+            dgv.DataSource = tbl;
         }
 
 

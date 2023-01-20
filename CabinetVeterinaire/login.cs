@@ -17,9 +17,12 @@ namespace CabinetVeterinaire
         {
             InitializeComponent();
         }
-
+        public byte[] key = Encoding.UTF8.GetBytes("kdjfzel5zkd6eonf");
+        public byte[] iv = Encoding.UTF8.GetBytes("ptrg9rej3ef5rjg6");
         private void sign_Click(object sender, EventArgs e)
         {
+            //string decryptedPassword = AesCryp.Decrypt(passwordbox.Text, key, iv);
+
             if (Utilisateurdb.seConnecter(loginbox.Text, passwordbox.Text) == true)
             {
                 Dashboard d = new Dashboard();

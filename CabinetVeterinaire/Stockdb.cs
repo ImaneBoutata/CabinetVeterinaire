@@ -32,7 +32,7 @@ namespace CabinetVeterinaire
         public static void AddStock(Stock c)
         {
 
-            string sql = "INSERT INTO STOCK VALUES (NULL, @reference, @categorie, @qte, @prix)";
+            string sql = "INSERT INTO STOCK VALUES (NULL, @reference, @categorie, @qte, @prixUnitaire)";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = System.Data.CommandType.Text;
@@ -40,7 +40,7 @@ namespace CabinetVeterinaire
             cmd.Parameters.Add("@reference", MySqlDbType.VarChar).Value = c.Reference;
             cmd.Parameters.Add("@categorie", MySqlDbType.VarChar).Value = c.Categorie;
             cmd.Parameters.Add("@qte", MySqlDbType.VarChar).Value = c.Qte;
-            cmd.Parameters.Add("@prix", MySqlDbType.VarChar).Value = c.PrixUnitaire;
+            cmd.Parameters.Add("@prixUnitaire", MySqlDbType.VarChar).Value = c.PrixUnitaire;
           
 
 
@@ -64,7 +64,7 @@ namespace CabinetVeterinaire
 
         public static void UpdateStock(Stock c, int id)
         {
-            string sql = "Update STOCK SET reference=@reference,categorie=@categorie,qte=@qte, prix=@prix where id=@stockId";
+            string sql = "Update STOCK SET reference=@reference,categorie=@categorie,qte=@qte, prixUnitaire=@prixUnitaire where id=@stockId";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
@@ -72,7 +72,7 @@ namespace CabinetVeterinaire
             cmd.Parameters.Add("@reference", MySqlDbType.VarChar).Value = c.Reference;
             cmd.Parameters.Add("@categorie", MySqlDbType.VarChar).Value = c.Categorie;
             cmd.Parameters.Add("@qte", MySqlDbType.VarChar).Value = c.Qte;
-            cmd.Parameters.Add("@prix", MySqlDbType.VarChar).Value = c.PrixUnitaire;
+            cmd.Parameters.Add("@prixUnitaire", MySqlDbType.VarChar).Value = c.PrixUnitaire;
            
 
 
